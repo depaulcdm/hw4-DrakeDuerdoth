@@ -6,6 +6,8 @@
 	configuration should be private.
 	-->
 	<configurations>
+		<conf name = "compile" visibility = "public" />
+		<conf name2 = "test" visibility = "private" />
 	</configurations>
 	
 	<!--
@@ -24,5 +26,9 @@
 	version.
 	-->	
     <dependencies defaultconf="compile">
+	<dependency conf = "compile->default" org="log4j"
+		name = "log4j" rev = "v.1.2.17"/>
+	<dependency conf = "test->default" org = "junit"
+		name = "junit" rev="v.4.12" />
     </dependencies>
 </ivy-module>
